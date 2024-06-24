@@ -10,7 +10,7 @@ The Car Rental System is a .NET Core application designed to manage car rentals,
 - Handle car rental transactions, including renting and returning cars with pricing adjustments for late returns.
 
 ## Technologies Used
-- .NET Core 3.1
+- .NET Core 6
 - Entity Framework Core (In-Memory Database for testing)
 - ASP.NET Core Web API
 - Moq for Mocking in Unit Tests
