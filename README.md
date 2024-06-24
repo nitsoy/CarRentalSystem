@@ -1,16 +1,33 @@
 # Car Rental System
 
-## Descripción
+## Overview
+The Car Rental System is a .NET Core application designed to manage car rentals, calculate rental prices, track loyalty points for customers, and handle administrative tasks related to car inventory and rentals. This README provides an overview of the project structure, setup instructions, API endpoints, and testing information.
 
-Este proyecto es una API para gestionar un sistema de alquiler de coches. Proporciona operaciones para alquilar coches, devolver coches, calcular los precios de alquiler y los cargos adicionales, obtener listado de coches y gestionar los puntos de fidelidad de los usuarios.
+### Features
+- Maintain an inventory of cars categorized as Premium, SUV, and Small.
+- Calculate rental prices based on car type and rental duration.
+- Track loyalty points for customers based on the type of car rented.
+- Handle car rental transactions, including renting and returning cars with pricing adjustments for late returns.
 
-## Instalación
+## Technologies Used
+- .NET Core 3.1
+- Entity Framework Core (In-Memory Database for testing)
+- ASP.NET Core Web API
+- Moq for Mocking in Unit Tests
+- xUnit for Unit Testing
 
-1. Clona el repositorio.
-2. Navega al directorio del proyecto.
-3. Ejecuta `dotnet restore` para instalar las dependencias.
-4. Ejecuta `dotnet run` para iniciar la aplicación.
+## Project Structure
+The project is structured as follows:
 
-## Uso
-
-### Rentar un coche
+CarRentalSystem/
+├── CarRentalSystem/ # Main project folder
+│ ├── Controllers/ # API Controllers
+│ ├── Models/ # Data models including Car, Customer, Rental, etc.
+│ ├── Repositories/ # Data access layer interfaces and implementations
+│ ├── Services/ # Business logic services including RentalService, CustomerService, etc.
+│ ├── DTOs/ # Data Transfer Objects for API requests and responses
+│ └── appsettings.json # Configuration settings
+├── CarRentalSystem.Tests/ # Unit tests project
+│ ├── Services/ # Unit tests for services
+│ └── Mocks/ # Mocks for repositories and other dependencies
+└── README.md # Project documentation
