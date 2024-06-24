@@ -61,7 +61,7 @@ namespace CarRentalSystem.Services.Implementation
         }
         private decimal CalculateSUVPrice(decimal basePrice, int days)
         {
-            decimal totalPrice;
+            decimal totalPrice = 0;
             if (days <= 7)
             {
                 totalPrice = basePrice * days;
