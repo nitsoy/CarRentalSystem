@@ -12,11 +12,20 @@ namespace CarRentalSystem.Services.Implementation
         {
             _customerRepository = customerRepository;
         }
-        public IEnumerable<Customer> GetAll() => _customerRepository.GetAll();
+        public IEnumerable<Customer> GetAll()
+        {
+            return _customerRepository.GetAll();
+        }
 
-        public Customer GetById(int id) => _customerRepository.GetById(id);
+        public Customer GetById(int id)
+        {
+            return _customerRepository.GetById(id);
+        }
 
-        public async Task AddCustomer(Customer customer) => await _customerRepository.AddCustomer(customer);
+        public async Task AddCustomer(Customer customer)
+        {
+            await _customerRepository.AddCustomer(customer);
+        }
 
         public async Task AddLoyaltyPoints(int customerId, CarType carType)
         {

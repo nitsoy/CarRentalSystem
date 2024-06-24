@@ -26,9 +26,15 @@ namespace CarRentalSystem.Repositories.Implementations
             }
         }
 
-        public IEnumerable<Customer> GetAll() => _context.Customers.ToList();
+        public IEnumerable<Customer> GetAll()
+        {
+            return _context.Customers.ToList();
+        }
 
-        public Customer GetById(int id) => _context.Customers.Find(id);
+        public Customer GetById(int id)
+        {
+            return _context.Customers.Find(id);
+        }
 
         public async Task AddCustomer(Customer customer)
         {

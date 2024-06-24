@@ -12,13 +12,22 @@ namespace CarRentalSystem.Services.Implementation
         {
             _carRepository = carRepository;
         }
+        public IEnumerable<Car> GetAll()
+        {
+            return _carRepository.GetAll();
+        }
+        public Car GetById(int id)
+        {
+            return _carRepository.GetById(id);
+        }
+        public async Task AddCar(Car car)
+        {
+            await _carRepository.AddCar(car);
+        }
 
-        public IEnumerable<Car> GetAll() => _carRepository.GetAll();
-
-        public Car GetById(int id) => _carRepository.GetById(id);
-
-        public async Task AddCar(Car car) => await _carRepository.AddCar(car);
-
-        public async Task UpdateCar(Car car) => await _carRepository.UpdateCar(car);
+        public async Task UpdateCar(Car car)
+        {
+            await _carRepository.UpdateCar(car);
+        }
     }
 }

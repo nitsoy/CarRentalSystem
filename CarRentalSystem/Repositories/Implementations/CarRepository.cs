@@ -48,6 +48,5 @@ public class CarRepository : ICarRepository
         _context.Cars.Update(car);
         await SaveChanges();
     }
-
     public Task SaveChanges() => _context.SaveChangesAsync();
 }

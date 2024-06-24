@@ -13,9 +13,15 @@ namespace CarRentalSystem.Repositories.Implementations
             _context = context;
         }
 
-        public IEnumerable<Rental> GetAll() => _context.Rentals.ToList();
+        public IEnumerable<Rental> GetAll()
+        {
+            return _context.Rentals.ToList();
+        }
 
-        public Rental GetById(int id) => _context.Rentals.Find(id);
+        public Rental GetById(int id)
+        {
+            return _context.Rentals.Find(id);
+        }
 
         public async Task AddRental(Rental rental)
         {

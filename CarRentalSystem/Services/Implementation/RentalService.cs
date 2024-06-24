@@ -48,12 +48,7 @@ namespace CarRentalSystem.Services.Implementation
 
         public decimal CalculateRentalExtraCharges(int carId, int extraDays)
         {
-            var car = _carRepository.GetById(carId);
-            if (car == null)
-            {
-                throw new Exception("Car not found");
-            }
-
+            var car = _carRepository.GetById(carId) ?? throw new Exception("Car not found");
             var extraPrice = car.Type switch
             {
                 CarType.Premium => PremiumPrice + (PremiumPrice * 0.2m),
@@ -66,7 +61,7 @@ namespace CarRentalSystem.Services.Implementation
         }
         private decimal CalculateSUVPrice(decimal basePrice, int days)
         {
-            decimal totalPrice = 0;
+            decimal totalPrice;
             if (days <= 7)
             {
                 totalPrice = basePrice * days;
@@ -84,7 +79,7 @@ namespace CarRentalSystem.Services.Implementation
 
         private decimal CalculateSmallPrice(decimal basePrice, int days)
         {
-            decimal totalPrice = 0;
+            decimal totalPrice;
             if (days <= 7)
             {
                 totalPrice = basePrice * days;
